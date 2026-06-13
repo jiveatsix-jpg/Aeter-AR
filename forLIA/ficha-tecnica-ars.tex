@@ -1,0 +1,974 @@
+% =============================================================================
+%  FICHA TÉCNICA — ACTIVOS RESPIRATORIOS (AR 01–11)
+%  Documento indexable para el Departamento de Indexación de Datos
+%  Versión: 1.0 — Junio 2026
+%  Proyecto: Aeter-AR
+% =============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% ── Paquetes ─────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% ── Geometría ────────────────────────────────────────────────────────────────
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% ── Hipervínculos ────────────────────────────────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!60!black
+}
+
+% ── Encabezado / Pie ─────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Ficha Técnica — AR 01–11}}
+\fancyhead[R]{\small Aeter-AR v1.0}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Estilo de secciones ──────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\color{blue!60!black}}{}{0pt}{}[\vspace{-0.3cm}\rule{\textwidth}{0.4pt}]
+\titleformat{\subsection}{\bfseries\color{black!80!black}}{}{0pt}{}
+
+% ── Colores personalizados ───────────────────────────────────────────────────
+\definecolor{verde}{HTML}{2E7D32}
+\definecolor{amarillo}{HTML}{F57F17}
+\definecolor{rojo}{HTML}{C62828}
+\definecolor{gris}{HTML}{616161}
+\definecolor{azul}{HTML}{1565C0}
+
+% ── Comandos ─────────────────────────────────────────────────────────────────
+\newcommand{\veredicto}[1]{%
+    \ifthenelse{\equal{#1}{fuerte}}{\textcolor{verde}{\textbf{✅ FUERTE}}}{%
+    \ifthenelse{\equal{#1}{moderado}}{\textcolor{amarillo}{\textbf{⚠️ MODERADO}}}{%
+    \ifthenelse{\equal{#1}{parcial}}{\textcolor{amarillo}{\textbf{⚠️ PARCIAL}}}{%
+    \ifthenelse{\equal{#1}{sinrespaldo}}{\textcolor{rojo}{\textbf{❌ SIN RESPALDO}}}{%
+    \ifthenelse{\equal{#1}{exagerado}}{\textcolor{rojo}{\textbf{❌ EXAGERADO}}}{#1}}}}}
+}
+\newcommand{\riesgo}[1]{%
+    \ifthenelse{\equal{#1}{NULO}}{\textcolor{verde}{Nulo}}{%
+    \ifthenelse{\equal{#1}{BAJO}}{\textcolor{amarillo}{Bajo}}{%
+    \ifthenelse{\equal{#1}{MEDIO}}{\textcolor{rojo}{Medio}}{#1}}}
+}
+\newcommand{\riesgoficha}[1]{%
+    \ifthenelse{\equal{#1}{NULO}}{\textcolor{verde}{\textbf{Nulo}}}{%
+    \ifthenelse{\equal{#1}{BAJO}}{\textcolor{amarillo}{\textbf{Bajo}}}{%
+    \ifthenelse{\equal{#1}{MEDIO}}{\textcolor{rojo}{\textbf{Medio}}}{#1}}}
+}
+
+\usepackage{ifthen}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+    {\LARGE \textbf{Ficha Técnica}}\\[0.2cm]
+    {\Large Activos Respiratorios — AR 01–11}\\[0.3cm]
+    \rule{0.6\textwidth}{0.4pt}\\[0.3cm]
+    {\small Proyecto \textbf{Aeter-AR} — Versión 1.0 — Junio 2026}\\[0.1cm]
+    {\small Documento indexable para el Departamento de Indexación de Datos}\\[0.1cm]
+    {\small Clasificación: \textbf{Uso interno} — Validación científica v1.0}
+\end{center}
+
+\vspace{0.5cm}
+
+\tableofcontents
+\newpage
+
+% =============================================================================
+\section{Resumen de Estructura}
+% =============================================================================
+
+Cada AR se presenta con la siguiente estructura indexable:
+
+\begin{description}[itemsep=2pt]
+    \item[ID] Identificador único del activo (AR-01 a AR-11).
+    \item[Nombre] Nombre corto del activo.
+    \item[Nombre Oficial] Nombre técnico completo.
+    \item[Clasificación] Tipo de técnica: estimulación vagal, modulación autonómica, activación, etc.
+    \item[Mecanismo] Descripción del mecanismo fisiológico subyacente.
+    \item[Patrón] Esquema de tiempos de respiración (inhalación-retención-exhalación-retención).
+    \item[Duración] Tiempo total recomendado de práctica.
+    \item[Fases] Descripción detallada de cada fase del ciclo.
+    \item[Métricas] Valores reportados de HRV, cortisol, tiempo pico, duración residual.
+    \item[Riesgo] Nivel de riesgo: Nulo, Bajo, Medio.
+    \item[Veredicto Científico] Evaluación del respaldo científico según literatura revisada por pares.
+    \item[Correcciones] Diferencias entre el PDF original y los datos validados.
+    \item[Contexto] Recomendación de uso situacional.
+    \item[Fuente] Referencia bibliográfica principal.
+\end{description}
+
+\vspace{0.3cm}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Abreviación} & \textbf{Significado} \\
+    \midrule
+    HRV & Heart Rate Variability (Variabilidad de la Frecuencia Cardíaca) \\
+    SNS & Sistema Nervioso Simpático \\
+    PNS & Sistema Nervioso Parasimpático \\
+    HPA & Eje Hipotálamo-Pituitaria-Adrenal \\
+    CO\textsubscript{2} & Dióxido de carbono \\
+    O\textsubscript{2} & Oxígeno \\
+    RCT & Ensayo Controlado Aleatorizado (Randomized Controlled Trial) \\
+    VSB & Respiración Lenta Voluntaria (Voluntary Slow Breathing) \\
+    \bottomrule
+\end{tabularx}
+
+\newpage
+
+% =============================================================================
+%  AR-01
+% =============================================================================
+\section{AR-01: Respiración Diafragmática}
+\label{ar:01}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-01 \\
+    \textbf{Nombre} & Respiración Diafragmática \\
+    \textbf{Nombre Oficial} & Respiración Abdominal \\
+    \textbf{Clasificación} & Estimulación vagal forzada por presión diafragmática rítmica \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 4-0-4-6 (inhalación 4s, pausa plena 0s, exhalación 4s, pausa vacía 6s) \\
+    \textbf{Tiempo por ciclo} & 14 segundos \\
+    \textbf{Duración total} & 3--5 minutos \\
+    \textbf{Ciclos por minuto} & $\sim$4.3 rpm \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La contracción rítmica del diafragma estimula mecánicamente el nervio vago,
+activando el sistema parasimpático. La pausa vacía de 6 segundos prolonga la
+señal vagal, reduciendo la frecuencia cardíaca y la presión arterial. Meta-análisis
+de 223 estudios (Laborde et al., 2022) confirma aumento de HRV vagal-mediada.
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación & 4s & Nasal & Solo expansión abdominal. El pecho no se mueve. \\
+    Pausa Plena & 0s & — & Sin retención. Transición directa. \\
+    Exhalación & 4s & Bucal & Abdomen se hunde suavemente. \\
+    Pausa Vacía & 6s & — & Relajación total. Interruptor vagal. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Reducción de cortisol & Significativa (reducción documentada) \\
+    HRV & Aumento moderado a alto \\
+    Tiempo pico & 4 minutos \\
+    Duración residual & 60--90 minutos \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — Segura para todas las personas. Si hay mareo, reducir tiempos.
+
+\subsection*{Veredicto Científico}
+\veredicto{fuerte}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item ``$-27\%$ cortisol'' reemplazado por ``reducción significativa'' documentada.
+    \item ``$+48\%$ HRV'' reemplazado por ``aumento moderado a alto''.
+    \item Tiempos de pico (4 min) y residual (90 min) no verificados específicamente;
+          se mantienen como rangos referenciales.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Uso general: estrés, inicio de cualquier práctica, recuperación.
+
+\subsection*{Fuente}
+Laborde S. et al. (2022). Effects of voluntary slow breathing on HRV: A systematic
+review and meta-analysis. \textit{Neuroscience \& Biobehavioral Reviews}, 138, 104711.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-02
+% =============================================================================
+\section{AR-02: Physiological Sigh}
+\label{ar:02}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-02 \\
+    \textbf{Nombre} & Physiological Sigh \\
+    \textbf{Nombre Oficial} & Doble Inhalación — Reset de Pánico \\
+    \textbf{Clasificación} & Reinflación alveolar + activación vagal por exhalación prolongada \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 2+1 / 8--12 (inhalación 70\%, relleno, exhalación 8--12s) \\
+    \textbf{Tiempo por ciclo} & $\sim$10 segundos \\
+    \textbf{Duración total} & 90 segundos -- 5 minutos \\
+    \textbf{Ciclos} & 3--5 repeticiones \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La doble inhalación reinfla alvéolos colapsados, maximizando el intercambio
+gaseoso. La exhalación larga activa el nervio vago, reduciendo la frecuencia
+cardíaca. Estudio randomizado Stanford 2023 (Balban et al.) demostró que el
+\textit{cyclic sighing} superó a \textit{box breathing} y mindfulness en mejora
+del ánimo y reducción de ansiedad (p $<$ 0.05).
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación Máxima & 3s & Nasal & Expansión pulmonar al $\sim$70\%. \\
+    Inhalación Relleno & 1s & Nasal & Sorbo extra sin soltar aire previo. \\
+    Exhalación Lenta & 10s (8--12) & Bucal & Continua y completa. Activa el vago. \\
+    Repetición & 3--5 ciclos & — & Para efecto completo. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Reducción de ansiedad & Significativa vs. mindfulness (p $<$ 0.05) \\
+    HRV & Aumento moderado \\
+    Tiempo pico & 90 segundos \\
+    Duración residual & 45 minutos \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — Segura. Si la exhalación forzada genera mareo, reducir a 6--8s.
+
+\subsection*{Veredicto Científico}
+\veredicto{fuerte}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item Sin correcciones mayores. Se fortaleció con cita directa al estudio Stanford.
+    \item Se agregó precisión sobre el tamaño del efecto y el contexto del estudio.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Ataques de pánico, ansiedad aguda, transiciones entre tareas de alta presión.
+
+\subsection*{Fuente}
+Balban M.Y. et al. (2023). Brief structured respiration practices enhance mood
+and reduce physiological arousal. \textit{Cell Reports Medicine}, 4, 100895.
+Stanford RCT NCT05304000.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-03
+% =============================================================================
+\section{AR-03: Box Breathing}
+\label{ar:03}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-03 \\
+    \textbf{Nombre} & Box Breathing \\
+    \textbf{Nombre Oficial} & Respiración en Caja — Estado Cero \\
+    \textbf{Clasificación} & Nivelación autonómica 1:1 entre SNS y PNS \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 4-4-4-4 (inhalación 4s, retención lleno 4s, exhalación 4s, retención vacío 4s) \\
+    \textbf{Tiempo por ciclo} & 16 segundos \\
+    \textbf{Duración total} & 4--8 minutos \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+Las cuatro fases iguales equilibran el sistema nervioso autónomo. La retención con
+pulmones llenos estimula barorreceptores; la retención vacía activa el vago.
+Usado por fuerzas especiales (Navy SEALs) para mantener claridad bajo presión.
+La retención de CO\textsubscript{2} modula quimiorreceptores, reduciendo la ansiedad.
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación & 4s & Nasal & Ritmo metronómico. \\
+    Retención Lleno & 4s & — & Quietud absoluta. Sin tensión en glotis. \\
+    Exhalación & 4s & Bucal & Flujo constante y controlado. \\
+    Retención Vacío & 4s & — & Punto de equilibrio SNS/PNS. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Reducción de cortisol & Significativa (con práctica regular) \\
+    HRV & $+55\%$ (aumento reportado, referencial) \\
+    Tiempo pico & 5 minutos \\
+    Duración residual & 3 horas \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — Segura. No forzar las retenciones.
+
+\subsection*{Veredicto Científico}
+\veredicto{fuerte}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item Claim de ``elimina temblor motor fino'' ajustado a efecto reportado, no probado.
+    \item $+55\%$ HRV mantenido como número referencial, no universal.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Estrés agudo, recuperación post-esfuerzo, preparación para tareas de alta concentración.
+
+\subsection*{Fuente}
+Estudios múltiples. Ver revisión Laborde et al. (2022).
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-04
+% =============================================================================
+\section{AR-04: Coherencia Cardíaca}
+\label{ar:04}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-04 \\
+    \textbf{Nombre} & Coherencia Cardíaca \\
+    \textbf{Nombre Oficial} & Respiración de Resonancia \\
+    \textbf{Clasificación} & Sincronización barorreceptora a 0.1 Hz \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 5-0-5-0 (inhalación 5s, exhalación 5s, sin pausas) \\
+    \textbf{Tiempo por ciclo} & 10 segundos \\
+    \textbf{Frecuencia} & $\sim$6 respiraciones por minuto (0.10 Hz) \\
+    \textbf{Duración total} & 5--15 minutos \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+A $\sim$6 respiraciones/minuto, el sistema cardiovascular entra en resonancia:
+frecuencia cardíaca, presión arterial y respiración se sincronizan. Esto maximiza
+la amplitud de la HRV y optimiza el flujo sanguíneo a la corteza prefrontal.
+Estudio con 1.8 millones de sesiones (Nature, 2025) confirma que la frecuencia
+de coherencia más común es 0.10 Hz.
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación & 5s & Nasal & Flujo constante y sedoso. \\
+    Exhalación & 5s & Nasal/Bucal & Sin pausas entre fases. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    HRV & Aumento significativo (máximo en frecuencia de resonancia) \\
+    Tiempo pico & 6 minutos \\
+    Duración residual & 4--6 horas \\
+    Coherencia & Óptima en 0.04--0.10 Hz \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — Segura. Mantener postura erguida.
+
+\subsection*{Veredicto Científico}
+\veredicto{fuerte}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item ``$+310\%$ HRV'' eliminado. Reemplazado por ``aumento significativo de HRV''.
+          El número no es replicable ni universal.
+    \item Duración residual (4--6h) no establecida científicamente pero reportada
+          por practicantes. Se mantiene como referencia.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Antes de reuniones importantes, estudio, trabajo creativo, o práctica diaria de base.
+
+\subsection*{Fuente}
+Nature Scientific Reports (2025). HRV biofeedback global study — 1.8 millones de
+sesiones. Sévoz-Couche \& Laborde (2022). Neurosci Biobehav Rev, 135, 104576.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-05
+% =============================================================================
+\section{AR-05: 4-7-8 Modificado}
+\label{ar:05}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-05 \\
+    \textbf{Nombre} & 4-7-8 Modificado \\
+    \textbf{Nombre Oficial} & Inducción al Sueño \\
+    \textbf{Clasificación} & Acumulación controlada de CO\textsubscript{2} para sedación neuronal \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 4-7-8-0 (inhalación 4s, retención 7s, exhalación 8s, sin retención vacía) \\
+    \textbf{Tiempo por ciclo} & 19 segundos \\
+    \textbf{Duración total} & 8 ciclos ($\sim$2.5 minutos) \\
+    \textbf{Máximo} & 8 ciclos por práctica \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La retención de 7 segundos acumula CO\textsubscript{2} en sangre, activando
+quimiorreceptores que inducen una sensación de calma química. La exhalación de
+8 segundos activa el vago. Desarrollado por el Dr.~Andrew Weil (Harvard).
+Estudios muestran que la respiración lenta con retención puede reducir la
+latencia de sueño, aunque el efecto es modesto ($\sim$55 segundos más rápido,
+Duke 2017).
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación & 4s & Nasal & Silenciosa y suave. \\
+    Retención Lleno & 7s & — & Acumulación química de CO\textsubscript{2}. \\
+    Exhalación & 8s & Bucal & ``Whoosh'' suave. Relajación. \\
+    Repetición & $\times$8 & — & Máximo 8 ciclos. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Reducción de cortisol & $-18\%$ (reportado) \\
+    HRV & $+22\%$ (reportado) \\
+    Tiempo pico & 12 minutos \\
+    Duración residual & 8 horas \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{BAJO} — No forzar la retención de 7s si genera ansiedad.
+
+\subsection*{Veredicto Científico}
+\veredicto{moderado}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item ``Sueño en $<$12 minutos'' \textbf{eliminado}. Estudio Duke 2017 mostró
+          solo 55 segundos de mejora en latencia de sueño.
+    \item Reformulado como ``ayuda a conciliar el sueño'' sin prometer tiempos.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Dificultad para dormir, insomnio leve, relajación profunda antes de dormir.
+
+\subsection*{Fuente}
+Jerath R. et al. (2019). Self-Regulation of Breathing as Adjunctive Treatment of
+Insomnia. \textit{Front Psychiatry}. Duke University (2017).
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-06
+% =============================================================================
+\section{AR-06: Nadi Shodhana}
+\label{ar:06}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-06 \\
+    \textbf{Nombre} & Nadi Shodhana \\
+    \textbf{Nombre Oficial} & Respiración Alterna — Balance Hemisférico \\
+    \textbf{Clasificación} & Modulación del ciclo nasal y balance autonómico \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 4-4-4-4 alterno (inhalación, retención, exhalación, retención, con alternancia de fosa nasal) \\
+    \textbf{Tiempo por ciclo} & 16 segundos \\
+    \textbf{Duración total} & 6--10 minutos \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La respiración por una fosa nasal a la vez influye en el ciclo nasal ultradiano
+(alternancia natural de dominancia nasal cada 2--3h). Estudios pequeños muestran
+activación parasimpática y mejora en tareas de memoria espacial. El ``balance
+hemisférico'' es un concepto yóguico sin respaldo neurocientífico directo, pero
+la técnica tiene efectos calmantes documentados.
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalar Izquierda & 4s & Nasal & Cerrar fosa derecha con el pulgar. \\
+    Retención Lleno & 4s & — & Sincronización. \\
+    Exhalar Derecha & 4s & Nasal & Cerrar fosa izquierda con anular. \\
+    Retención Vacío & 4s & — & Invertir dirección y repetir. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    HRV & $+28\%$ (reportado) \\
+    Reducción de cortisol & $-24\%$ (reportado) \\
+    Tiempo pico & 8 minutos \\
+    Duración residual & 2 horas \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — Segura.
+
+\subsection*{Veredicto Científico}
+\veredicto{parcial}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item ``$+22\%$ decisión'' \textbf{eliminado}. No hay estudio específico con ese número.
+    \item ``Balance hemisférico'' mantenido como concepto yóguico, no como
+          mecanismo neurocientífico probado.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Antes de meditar, ansiedad generalizada, transiciones mentales.
+
+\subsection*{Fuente}
+Nepal Medical College Journal — estudio de memoria espacial con Nadi Shodhana.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-07
+% =============================================================================
+\section{AR-07: Super-ventilación + Retención}
+\label{ar:07}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-07 \\
+    \textbf{Nombre} & Super-ventilación + Retención \\
+    \textbf{Nombre Oficial} & Potencia Yang — Alcalosis Controlada \\
+    \textbf{Clasificación} & Alcalosis respiratoria + hipoxia controlada \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 40 respiraciones rápidas + retención en vacío \\
+    \textbf{Tiempo por ciclo} & Variable \\
+    \textbf{Duración total} & 15 minutos \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La hiperventilación sostenida reduce el CO\textsubscript{2} sanguíneo (hipocapnia)
+elevando el pH (alcalosis), lo que amortigua la señal de dolor y frío. La
+retención en vacío subsiguiente genera hipoxia controlada. Los resultados
+científicos son mixtos: un estudio en \textit{Scientific Reports} (2023) no
+encontró diferencias significativas en HRV o bienestar (p $>$ 0.05).
+Sin embargo, una revisión \textit{PLOS One} (2024) sugiere efectos
+anti-inflamatorios (aumento de IL-10).
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Respiraciones rápidas & $\times$40 & Nasal & Inhalación 80\%, exhalación suelta. \\
+    Vaciado total & — & — & Expulsar todo el aire. \\
+    Retención Vacío & hasta 120s & — & NO forzar. Síntomas de alerta. \\
+    Inhalación Rescate & 15s & Nasal & Restablecer equilibrio. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Respuesta adrenal & $+15\%$ (reportado) \\
+    HRV & $-10\%$ (durante la práctica) \\
+    Tiempo pico & 15 minutos \\
+    Duración residual & 1 hora \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{MEDIO} — \textbf{Contraindicaciones:} epilepsia, cardiopatías,
+embarazo, presión alta no controlada. Puede causar síncope o tetania.
+Solo personas sanas y en posición segura.
+
+\subsection*{Veredicto Científico}
+\veredicto{parcial}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item Se agregaron advertencias de seguridad explícitas.
+    \item Se documentaron los resultados mixtos de la literatura (Scientific
+          Reports 2023 vs. PLOS One 2024).
+    \item No recomendado para principiantes sin supervisión.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Personas entrenadas que buscan resiliencia al frío/dolor. No apta para principiantes.
+
+\subsection*{Fuente}
+Ketelhut S. et al. (2023). WHM effectiveness on cardiac autonomic function.
+\textit{Scientific Reports}, 13, 17517. Almahayni O. (2024). \textit{PLOS One}, 19(3).
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-08
+% =============================================================================
+\section{AR-08: Bio-Eficiencia}
+\label{ar:08}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-08 \\
+    \textbf{Nombre} & Bio-Eficiencia \\
+    \textbf{Nombre Oficial} & Optimización de Oxígeno — Efecto Bohr \\
+    \textbf{Clasificación} & Elevación del umbral de CO\textsubscript{2} para activar el Efecto Bohr \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 2-0-2 + Pausa Máxima (inhalación 2s, exhalación 2s, pausa máxima) \\
+    \textbf{Duración total} & 10 minutos \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La respiración superficial reduce ligeramente el CO\textsubscript{2}, y la pausa
+máxima hasta ``hambre de aire'' lo eleva nuevamente, desplazando la curva de
+disociación de la hemoglobina (Efecto Bohr). Esto facilita la liberación de
+O\textsubscript{2} a los tejidos. El mecanismo es fisiológicamente real
+(Christian Bohr, 1904).
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación & 2s & Nasal & Superficial, bajo volumen. \\
+    Exhalación & 2s & Nasal & Pasiva y relajada. \\
+    Pausa Máxima & Variable & — & Hasta ``hambre de aire'' moderada. \\
+    Recuperación & 3 ciclos & Nasal & Calmar inmediatamente. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Reducción de cortisol & $-12\%$ (reportado) \\
+    HRV & $+35\%$ (reportado) \\
+    Tiempo pico & 10 minutos \\
+    Duración residual & 3 horas \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{BAJO} — La pausa máxima debe sentirse como ``hambre de aire'', no como asfixia.
+
+\subsection*{Veredicto Científico}
+\veredicto{moderado}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item ``$+25\%$ O\textsubscript{2} efficiency'' \textbf{eliminado}.
+          No hay estudios que respalden ese número.
+    \item Reformulado como ``optimiza la liberación de O\textsubscript{2}
+          mediante el Efecto Bohr''.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Mejora de eficiencia respiratoria general, preparación para ejercicio aeróbico.
+
+\subsection*{Fuente}
+Christian Bohr (1904). Efecto Bohr. Mecanismo fisiológico establecido.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-09
+% =============================================================================
+\section{AR-09: Modo Turbo}
+\label{ar:09}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-09 \\
+    \textbf{Nombre} & Modo Turbo \\
+    \textbf{Nombre Oficial} & Activación Simpática Explosiva \\
+    \textbf{Clasificación} & Activación del eje HPA para pico adrenérgico \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 2 ciclos/segundo (exhalación explosiva + inhalación pasiva) \\
+    \textbf{Tiempo por ciclo} & 0.5 segundos \\
+    \textbf{Duración total} & 1--3 minutos \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La respiración rápida activa el sistema nervioso simpático y el eje HPA,
+liberando adrenalina. La exhalación nasal explosiva crea presión intra-abdominal
+que estabiliza el core. Similar a Bhastrika (pranayama del fuelle).
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Exhalación Explosiva & 0.5s & Nasal & Abdomen como pistón. \\
+    Inhalación Pasiva & 0.5s & Nasal & Por descompresión. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Respuesta adrenal & $+45\%$ (reportado, estimado) \\
+    HRV & $-25\%$ (durante la práctica) \\
+    Tiempo pico & 60 segundos \\
+    Duración residual & 20 minutos \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{BAJO} — No hacer si hay presión alta, ansiedad severa o problemas cardíacos.
+
+\subsection*{Veredicto Científico}
+\veredicto{moderado}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item Sin correcciones importantes. Mecanismo directo y simple.
+    \item $+45\%$ adrenalina es un estimado razonable pero no verificado en
+          estudio específico.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Antes de esfuerzo físico explosivo, para salir de letargo, calentamiento.
+
+\subsection*{Fuente}
+Mecanismo fisiológico estándar. Bhastrika pranayama como referencia.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-10
+% =============================================================================
+\section{AR-10: Cadencia Síncrona}
+\label{ar:10}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-10 \\
+    \textbf{Nombre} & Cadencia Síncrona \\
+    \textbf{Nombre Oficial} & Gestión de Carga — Sincronización Paso-Respiración \\
+    \textbf{Clasificación} & Estabilización mecánica y acoplamiento locomotor-respiratorio \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & 2 pasos / 2--3 pasos (inhalar en 2 pasos, exhalar en 2--3) \\
+    \textbf{Duración total} & Duración del esfuerzo \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La sincronización entre respiración y zancada optimiza la biomecánica respiratoria.
+El patrón 2:2 es el más común en corredores de resistencia. El acoplamiento
+locomotor-respiratorio está documentado en fisiología del ejercicio.
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación & 2 pasos & Nasal & Ajustable por intensidad. \\
+    Exhalación & 2--3 pasos & Bucal & Flujo constante. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    Reducción de cortisol & $-5\%$ (reportado) \\
+    HRV & $+15\%$ (reportado) \\
+    Tiempo pico & Inmediato \\
+    Duración residual & Durante el esfuerzo \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — Segura. Ajustar ratio según intensidad.
+
+\subsection*{Veredicto Científico}
+\veredicto{moderado}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item Claim sobre lactato ajustado a ``teórico, no probado''.
+    \item Mantenido como ``práctica común en deportes de resistencia''.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Running, ciclismo, remo, o cualquier actividad de resistencia con patrón repetitivo.
+
+\subsection*{Fuente}
+Fisiología del ejercicio estándar. Acoplamiento locomotor-respiratorio documentado.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+%  AR-11
+% =============================================================================
+\section{AR-11: Pausa de Precisión}
+\label{ar:11}
+
+\subsection*{Identificación}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{ID} & AR-11 \\
+    \textbf{Nombre} & Pausa de Precisión \\
+    \textbf{Nombre Oficial} & PRN Window — Estabilidad en Acción \\
+    \textbf{Clasificación} & Bradicardia inducida para estabilidad motora \\
+\end{tabularx}
+
+\subsection*{Patrón y Duración}
+\begin{tabularx}{\textwidth}{lX}
+    \textbf{Patrón} & PRN (inhalación 2s, exhalación parcial 2s, pausa 3s) \\
+    \textbf{Tiempo por ciclo} & 7 segundos \\
+    \textbf{Uso} & Bajo demanda, no como práctica continua \\
+\end{tabularx}
+
+\subsection*{Mecanismo}
+La pausa respiratoria reduce momentáneamente la frecuencia cardíaca (bradicardia)
+y disminuye el temblor fisiológico, mejorando la estabilidad en tareas de
+precisión. Usado en tiro, cirugía, o cualquier actividad que requiera pulso
+firme. La bradicardia inducida por retención es un reflejo fisiológico conocido.
+
+\subsection*{Fases del Ciclo}
+\begin{tabularx}{\textwidth}{lccX}
+    \toprule
+    \textbf{Fase} & \textbf{Duración} & \textbf{Vía} & \textbf{Notas} \\
+    \midrule
+    Inhalación Normal & 2s & Nasal & Sin llenar al máximo. \\
+    Exhalación Parcial & 2s & Bucal & 60--70\% del volumen. \\
+    PAUSA PRN & 3s (máx 5s) & — & Ventana de acción. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Métricas Reportadas}
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Métrica} & \textbf{Valor} \\
+    \midrule
+    HRV & $+5\%$ (reportado) \\
+    Reducción de cortisol & $-10\%$ (reportado) \\
+    Tiempo pico & Inmediato \\
+    Duración residual & 30 segundos \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Riesgo}
+\riesgoficha{NULO} — No mantener más de 5s para evitar hipoxia.
+
+\subsection*{Veredicto Científico}
+\veredicto{moderado}
+
+\subsection*{Correcciones Respecto al PDF Original}
+\begin{itemize}
+    \item Sin correcciones mayores. Técnica contextual con mecanismo plausible.
+    \item Aclarado que no hay estudios específicos que respalden la mejora de
+          precisión en tiro, aunque es ampliamente usado en contextos tácticos.
+\end{itemize}
+
+\subsection*{Contexto de Uso}
+Tiro deportivo, tareas de precisión, cirugía, fotografía con teleobjetivo.
+
+\subsection*{Fuente}
+Reflejo de buceo (\textit{diving reflex}) y bradicardia por retención respiratoria.
+Fisiología estándar.
+
+\bigskip
+\rule{\textwidth}{0.2pt}
+
+% =============================================================================
+\section{Índice de Métricas Comparativas}
+% =============================================================================
+
+\begin{longtable}{lccccc}
+    \toprule
+    \textbf{AR} & \textbf{Cortisol} & \textbf{HRV} & \textbf{Pico} & \textbf{Residual} & \textbf{Riesgo} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    AR-01 & Significativa $\downarrow$ & Moderado $\uparrow$ & 4 min & 60--90 min & Nulo \\
+    AR-02 & — & Moderado $\uparrow$ & 90 s & 45 min & Nulo \\
+    AR-03 & Significativa $\downarrow$ & $+$55\% $\uparrow$ & 5 min & 3 h & Nulo \\
+    AR-04 & — & Significativo $\uparrow\uparrow$ & 6 min & 4--6 h & Nulo \\
+    AR-05 & $-$18\% $\downarrow$ & $+$22\% $\uparrow$ & 12 min & 8 h & Bajo \\
+    AR-06 & $-$24\% $\downarrow$ & $+$28\% $\uparrow$ & 8 min & 2 h & Nulo \\
+    AR-07 & — & $-$10\% $\downarrow$* & 15 min & 1 h & Medio \\
+    AR-08 & $-$12\% $\downarrow$ & $+$35\% $\uparrow$ & 10 min & 3 h & Bajo \\
+    AR-09 & — & $-$25\% $\downarrow$* & 60 s & 20 min & Bajo \\
+    AR-10 & $-$5\% $\downarrow$ & $+$15\% $\uparrow$ & Inmediato & Durante ej. & Nulo \\
+    AR-11 & $-$10\% $\downarrow$ & $+$5\% $\uparrow$ & Inmediato & 30 s & Nulo \\
+\end{longtable}
+\vspace{0.2cm}
+{\small * Durante la práctica. El resto son valores post-práctica.}
+
+\end{document}
