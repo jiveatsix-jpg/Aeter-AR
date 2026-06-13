@@ -103,7 +103,7 @@ export function ArDetailPage() {
       {ar.metrics.length > 0 && (
         <section className="space-y-3">
           <h2 className="text-lg font-semibold">Retorno Medido</h2>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
             {ar.metrics.map((m, i) => (
               <div key={i} className="rounded-lg border border-slate-800 p-3">
                 <p className="text-xs text-slate-500">{m.name}</p>

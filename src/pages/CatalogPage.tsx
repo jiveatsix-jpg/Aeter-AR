@@ -24,7 +24,7 @@ export function CatalogPage() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 gap-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         {[...ARS].map((ar) => (
           <button
             key={ar.id}

@@ -22,7 +22,7 @@ export function PhaseProgressBar({
     <div className="w-full space-y-2">
       {/* Cycle indicator */}
       <div className="flex justify-between text-sm text-slate-400">
-        <span>Cycle {cycle + 1} of {totalCycles}</span>
+        <span>Ciclo {cycle + 1} de {totalCycles}</span>
       </div>
 
       {/* Phase dots */}

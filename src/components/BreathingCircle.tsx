@@ -1,4 +1,5 @@
 import { getPhaseColor, getPhaseScale } from "../hooks/useBreathingTimer"
+import { GLOW_COLORS } from "../lib/glow"
 
 interface BreathingCircleProps {
   phaseName: string
@@ -12,12 +13,28 @@ export function BreathingCircle({ phaseName, elapsed, total }: BreathingCirclePr
   const circumference = 2 * Math.PI * 120
   const offset = circumference * (1 - progress)
   const colorClass = getPhaseColor(phaseName)
-  const borderColor = colorClass.split(" ")[0] ?? "border-blue-400"
+  const [borderClass] = colorClass.split(" ")
+  const strokeClass = borderClass?.replace("border-", "stroke-") ?? "stroke-blue-400"
+  const glow = GLOW_COLORS[phaseName.toLowerCase().trim() as keyof typeof GLOW_COLORS] ?? GLOW_COLORS.default
 
   return (
     <div className="relative flex items-center justify-center">
+      {/* Glow layer */}
+      <div
+        className="absolute rounded-full transition-all duration-1000 ease-in-out"
+        style={{
+          width: 280,
+          height: 280,
+          boxShadow: `0 0 80px 20px ${glow}`,
+          opacity: 0.25 + progress * 0.15,
+        }}
+      />
+
       {/* Background ring */}
-      <svg width={280} height={280} className="absolute">
+      <svg
+        viewBox="0 0 280 280"
+        className="w-64 md:w-80 lg:w-96"
+      >
         <circle
           cx={140}
           cy={140}
@@ -32,24 +49,27 @@ export function BreathingCircle({ phaseName, elapsed, total }: BreathingCirclePr
           cy={140}
           r={120}
           fill="none"
-          stroke={borderColor.replace("border-", "stroke-")}
+          stroke={strokeClass}
           strokeWidth={4}
           strokeDasharray={circumference}
           strokeDashoffset={offset}
           strokeLinecap="round"
-          className="transition-[stroke-dashoffset] duration-1000 ease-linear"
+          className="transition-all duration-1000 ease-in-out"
           transform="rotate(-90 140 140)"
         />
       </svg>
 
       {/* Animated circle */}
       <div
-        className={`relative z-10 flex size-56 items-center justify-center rounded-full border-4 transition-all duration-1000 ease-linear ${colorClass}`}
+        className={`absolute flex items-center justify-center rounded-full border-4 transition-all duration-1000 ease-in-out ${colorClass}`}
         style={{
+          width: "calc(100% - 48px)",
+          aspectRatio: "1 / 1",
+          maxWidth: 240,
           transform: `scale(${scale})`,
         }}
       >
-        <span className="text-7xl font-light tabular-nums tracking-tight text-white">
+        <span className="text-5xl font-light tabular-nums tracking-tight text-white md:text-6xl lg:text-7xl">
           {total - elapsed}
         </span>
       </div>

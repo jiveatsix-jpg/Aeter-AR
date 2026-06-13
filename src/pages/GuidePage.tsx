@@ -77,7 +77,7 @@ function GuideInner({ arId, arName, phases, soundEnabled, navigate }: GuideInner
   }
 
   return (
-    <div className="flex flex-col items-center gap-8 py-8">
+    <div className="mx-auto flex max-w-md flex-col items-center gap-8 py-8 md:max-w-xl lg:max-w-2xl">
       {/* Header */}
       <div className="text-center">
         <h1 className="text-xl font-bold">{arName}</h1>
