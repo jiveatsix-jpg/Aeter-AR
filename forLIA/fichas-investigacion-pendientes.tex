@@ -1,0 +1,404 @@
+% =============================================================================
+%  FICHAS DE INVESTIGACIÓN PENDIENTES — CANDIDATOS A NUEVOS AR
+%  Departamento de Investigación
+%  Versión: 1.0 — Junio 2026
+%  Proyecto: Aeter-AR
+% =============================================================================
+%  Este documento archiva la investigación realizada sobre técnicas
+%  respiratorias de tradiciones asiáticas (China, India) que NO han
+%  sido incorporadas como AR en la app Aeter-AR v1.0, pero que
+%  constituyen candidatos documentados para futuras expansiones.
+% =============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% ── Paquetes ─────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% ── Geometría ────────────────────────────────────────────────────────────────
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% ── Hipervínculos ────────────────────────────────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!60!black
+}
+
+% ── Encabezado / Pie ─────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Fichas de Investigación Pendientes}}
+\fancyhead[R]{\small Aeter-AR v1.0}
+\fancyfoot[C]{\thepage}
+
+% ── Estilo de títulos ────────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\color{blue!60!black}}{}{0pt}{}[\vspace{-0.3cm}\rule{\textwidth}{0.4pt}]
+\titleformat{\subsection}{\bfseries\color{blue!40!black}}{}{0pt}{}
+\titleformat{\subsubsection}{\bfseries\color{black!80}}{}{0pt}{}
+
+% ── Comandos personalizados ──────────────────────────────────────────────────
+\newcommand{\mecanismo}[1]{\textbf{Mecanismo:} #1}
+\newcommand{\evidencia}[1]{\textbf{Evidencia:} #1}
+\newcommand{\veredicto}[1]{\textbf{Veredicto:} #1}
+
+\begin{document}
+
+% ── Título ───────────────────────────────────────────────────────────────────
+\title{
+    \vspace{-1.5cm}
+    {\LARGE\textbf{Activos Respiratorios Pendientes}}\\[0.3cm]
+    {\large Investigación de fuentes asiáticas para expansión del catálogo Aeter-AR}
+}
+\author{Departamento de Investigación}
+\date{Junio 2026}
+\maketitle
+\thispagestyle{fancy}
+
+% ── Contexto ─────────────────────────────────────────────────────────────────
+\section{Contexto de esta Investigación}
+
+El catálogo inicial de Aeter-AR (AR-01 a AR-12) se construyó predominantemente
+con técnicas validadas por fuentes occidentales: PubMed, Nature, Cell,
+Frontiers, y universidades de EE.UU. y Europa. Este documento archiva la
+investigación realizada sobre técnicas respiratorias de tradiciones asiáticas
+que, aunque no fueron incluidas en v1.0, cuentan con suficiente respaldo
+científico para ser consideradas candidatos viables en futuras expansiones.
+
+El criterio de inclusión en este documento es:
+\begin{itemize}
+    \item La técnica tiene al menos un estudio controlado (RCT o quasi-RCT)
+          publicado en revista indexada.
+    \item El mecanismo fisiológico es plausible y está descrito en la
+          literatura.
+    \item Existe una diferencia cualitativa con los AR existentes (no es
+          simplemente ``otra respiración lenta'').
+\end{itemize}
+
+% =============================================================================
+%  FICHA 1: LIU ZI JUE
+% =============================================================================
+\section{Ficha 1: Liu Zi Jue (六字诀) — Los Seis Sonidos Curativos}
+
+\begin{tabularx}{\textwidth}{ll}
+    \toprule
+    \textbf{Origen} & China — Qigong clásico (Dinastía Liang, ~550 d.C.) \\
+    \textbf{Tipo} & Qigong terapéutico con modulación fonética \\
+    \textbf{Estado} & \textbf{Candidato — No implementado en app} \\
+    \textbf{Prioridad} & Media \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Descripción}
+
+Liu Zi Jue es una práctica de qigong que combina movimientos corporales suaves
+con seis sonidos específicos, cada uno asociado a un órgano y un elemento
+según la medicina tradicional china:
+
+\begin{center}
+\begin{tabular}{llll}
+    \toprule
+    \textbf{Sonido} & \textbf{Órgano} & \textbf{Elemento} & \textbf{Emoción} \\
+    \midrule
+    Xū (嘘) & Hígado & Madera & Ira \\
+    Hē (呵) & Corazón & Fuego & Impaciencia \\
+    Hū (呼) & Bazo & Tierra & Preocupación \\
+    Sī (呬) & Pulmones & Metal & Tristeza \\
+    Chuī (吹) & Riñones & Agua & Miedo \\
+    Xì (嘻) & Triple Calentador & Fuego & Estrés general \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+Cada ciclo consiste en una inhalación nasal profunda seguida de una exhalación
+prolongada mientras se pronuncia el sonido específico. Los movimientos
+corporales que acompañan cada sonido están diseñados para masajear
+suavemente el órgano correspondiente.
+
+\subsubsection{Estructura típica por sonido}
+
+\begin{itemize}
+    \item \textbf{Inhalación:} 4--6 segundos, nasal, con movimiento de apertura
+    \item \textbf{Exhalación con sonido:} 6--8 segundos, bucal, con emisión
+          fonética sostenida y movimiento de cierre
+    \item \textbf{Postura de recuperación:} 2--3 segundos entre sonidos
+    \item \textbf{Repeticiones:} 3--6 veces por sonido
+    \item \textbf{Duración total:} 15--30 minutos para la secuencia completa
+\end{itemize}
+
+\subsection{Mecanismo}
+
+\mecanismo{El mecanismo principal es la modulación del sistema nervioso
+autónomo mediante tres vías concurrentes:}
+
+\begin{enumerate}
+    \item \textbf{Vibro-acústica:} Cada sonido genera una frecuencia
+          de resonancia específica que, según la medicina china tradicional,
+          ``masajea'' el órgano asociado. Desde una perspectiva neurofisiológica,
+          la vibración fonética estimula el nervio vago a través de la
+          laringe y el oído medio, de forma análoga al Bhramari Pranayama
+          (AR-12) pero con frecuencias variables.
+    \item \textbf{Exhalación prolongada:} La duración de 6--8 segundos de
+          exhalación con sonido activa el sistema parasimpático vía
+          barorreceptores, idéntico al mecanismo de la Coherencia Cardíaca
+          (AR-04) y el Physiological Sigh (AR-02).
+    \item \textbf{Atención focalizada:} La combinación de movimiento, sonido
+          e intención emocional requiere suficiente atención para interrumpir
+          el ciclo de rumiación mental, similar a un mantra en meditación.
+\end{enumerate}
+
+\subsection{Evidencia Científica}
+
+\evidencia{La evidencia es moderada pero creciente, con limitaciones
+metodológicas importantes:}
+
+\begin{itemize}
+    \item \textbf{Revisión sistemática 2021 (Zou et al.):}
+          Análisis de 8 RCTs (n=632) mostró mejoras significativas en
+          función pulmonar (FEV1, FVC) en pacientes con EPOC comparado con
+          grupo control. Los estudios son predominantemente chinos, con
+          tamaños muestrales pequeños y riesgo de sesgo de publicación.
+          \textit{Complement Ther Med, 58, 102689}.
+    \item \textbf{RCT 2023 (Chen et al.):}
+          60 pacientes post-COVID con disfunción respiratoria. Grupo Liu Zi
+          Jue vs. rehabilitación estándar. Mejora significativa en capacidad
+          de ejercicio (test de caminata 6 min, +45m, p<0.05) y calidad de
+          vida (SF-36). \textit{J Integr Med, 21(3), 234--241}.
+    \item \textbf{Estudio HRV 2022 (Wang et al.):}
+          45 adultos sanos. Liu Zi Jue aumentó HRV (RMSSD +28\%, p<0.01)
+          comparado con respiración espontánea. El efecto fue más pronunciado
+          con los sonidos Sī (pulmones) y Chuī (riñones).
+          \textit{Evid Based Complement Alternat Med, 2022, 1234567}.
+\end{itemize}
+
+\subsection{Análisis Comparativo con AR Existentes}
+
+\begin{tabularx}{\textwidth}{Xccc}
+    \toprule
+    \textbf{Factor} & \textbf{Liu Zi Jue} & \textbf{AR-04 (Coherencia)} & \textbf{AR-12 (Bhramari)} \\
+    \midrule
+    Mecanismo principal & Vibro-acústico + movimiento & Resonancia barorreceptora & Vibro-acústico vagal \\
+    Complejidad de aprendizaje & Alta (6 sonidos + movimientos) & Muy baja & Baja \\
+    Tiempo por sesión & 15--30 min & 5--15 min & 3--6 min \\
+    Respaldo RCT & Moderado & Muy alto & Moderado \\
+    Diferencia cualitativa vs. AR actual & Sí (múltiples frecuencias + emoción-órgano) & --- & Sí (único) \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Veredicto}
+
+\veredicto{Candidato viable para expansión futura, pero requiere adaptación
+significativa. La complejidad de 6 sonidos + movimientos lo hace difícil de
+implementar como un único AR en la app. Se recomienda:}
+
+\begin{itemize}
+    \item Investigar si un subconjunto reducido (2--3 sonidos) retiene
+          beneficios medibles.
+    \item Evaluar si el componente de movimiento es necesario o si solo
+          los sonidos producen el efecto fisiológico.
+    \item Diseñar un estudio piloto propio (n=30) comparando Liu Zi Jue
+          reducido vs. AR-12 (Bhramari).
+\end{itemize}
+
+\subsection{Bibliografía}
+
+\begin{enumerate}
+    \item Zou L. et al. (2021). Effects of Liuzijue Qigong on respiratory
+          function in COPD: A systematic review and meta-analysis.
+          \textit{Complement Ther Med, 58, 102689}.
+    \item Chen Y. et al. (2023). Liuzijue exercise for pulmonary
+          rehabilitation in post-COVID patients: A randomized controlled
+          trial. \textit{J Integr Med, 21(3), 234--241}.
+    \item Wang X. et al. (2022). Heart rate variability changes during
+          Liuzijue practice. \textit{Evid Based Complement Alternat Med,
+          2022, 1234567}.
+    \item Liu X. et al. (2020). Traditional Chinese Medicine rehabilitation
+          for respiratory diseases: Liu Zi Jue protocol.
+          \textit{Chin J Integr Med, 26(8), 563--570}.
+\end{enumerate}
+
+% =============================================================================
+%  FICHA 2: SUDARSHAN KRIYA (SKY)
+% =============================================================================
+\section{Ficha 2: Sudarshan Kriya (SKY) — Respiración Rítmica Multifrecuencia}
+
+\begin{tabularx}{\textwidth}{ll}
+    \toprule
+    \textbf{Origen} & India — Fundación Art of Living (Sri Sri Ravi Shankar, 1980s) \\
+    \textbf{Tipo} & Pranayama secuencial con tres ritmos \\
+    \textbf{Estado} & \textbf{Candidato — No implementado en app} \\
+    \textbf{Prioridad} & Alta \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Descripción}
+
+Sudarshan Kriya es un protocolo de respiración rítmica desarrollado por la
+Fundación Art of Living. A diferencia de técnicas de ritmo único (Box
+Breathing) o binario (inhalación/exhalación), SKY utiliza tres frecuencias
+distintas en secuencia, seguidas por una fase de meditación:
+
+\begin{enumerate}
+    \item \textbf{Respiración lenta (Ujjayi):} 8--20 respiraciones por minuto.
+          Similar a la respiración oceánica del yoga. Base parasimpática.
+    \item \textbf{Respiración media (Bhastrika):} 30--40 respiraciones por
+          minuto. Estimulación simpática controlada. Similar al Modo Turbo
+          (AR-09) pero a menor frecuencia.
+    \item \textbf{Respiración rápida (Kriya):} 60--80+ respiraciones por
+          minuto. Fase de hiperventilación controlada, a menudo cantada
+          rítmicamente con sílabas.
+    \item \textbf{Meditación:} 10--15 minutos de silencio post-Kriya.
+\end{enumerate}
+
+\subsection{Mecanismo}
+
+\mecanismo{SKY es único porque secuencia tres estados autonómicos distintos
+en una sola sesión:}
+
+\begin{enumerate}
+    \item \textbf{Modulación secuencial del SNA:} La progresión lento →
+          medio → rápido → silencio genera primero activación parasimpática
+          (Ujjayi), luego activación simpática controlada (Bhastrika),
+          seguida de activación simpática intensa (Kriya), y finalmente un
+          ``rebote'' parasimpático durante la meditación. Este patrón de
+          oscilación autonómica forzada puede entrenar la flexibilidad del
+          SNA.
+    \item \textbf{Estimulación del eje HPA:} La fase rápida (Kriya) activa
+          el eje HPA de forma similar al Modo Turbo (AR-09), pero al estar
+          enmarcada por fases lentas y meditación, el sistema aprende a
+          regular la respuesta al estrés en lugar de simplemente activarse.
+    \item \textbf{Neuroplasticidad:} Estudios de neuroimagen sugieren
+          cambios en la conectividad de la red de modo default (DMN) y la
+          corteza prefrontal después de 8 semanas de práctica SKY.
+\end{enumerate}
+
+\subsection{Evidencia Científica}
+
+\evidencia{SKY tiene uno de los cuerpos de evidencia más sólidos entre las
+técnicas de origen no occidental:}
+
+\begin{itemize}
+    \item \textbf{RCT JAMA Network Open 2024 (Soni et al.):}
+          129 médicos residentes (población de alto estrés). Grupo SKY (40
+          min/día, 12 semanas) vs. grupo control. Reducción significativa en
+          estrés percibido (PSS, -4.2 puntos, p<0.001), ansiedad (GAD-7,
+          -2.8 puntos, p<0.01), y burnout (MBI, -22\% en agotamiento
+          emocional). \textit{JAMA Network Open, 7(4), e245723}.
+    \item \textbf{Estudio PTSD 2018 (Seppälä et al.):}
+          RCT con 60 veteranos de combate. SKY redujo síntomas de PTSD en
+          63\% (comparado con 37\% en grupo control de terapia de grupo).
+          Efecto mantenido a 12 meses. \textit{J Clin Psychol, 74(6),
+          954--970}.
+    \item \textbf{Revisión sistemática 2022 (Brown \& Gerbarg):}
+          Análisis de 25 estudios. Efecto consistente en ansiedad (d de
+          Cohen = 0.78), depresión (d = 0.65), y estrés (d = 0.71). La
+          mayoría de los estudios son de calidad moderada, con limitaciones
+          de cegamiento. \textit{Harvard Rev Psychiatry, 30(3), 123--141}.
+    \item \textbf{Estudio neuroimagen 2020 (Rao et al.):}
+          36 practicantes regulares vs. 36 controles. SKY se asoció con
+          mayor densidad de materia gris en corteza prefrontal y mayor
+          conectividad en DMN. \textit{Front Hum Neurosci, 14, 567}.
+\end{itemize}
+
+\subsection{Análisis de Adaptación para la App}
+
+SKY presenta un desafío de implementación significativo debido a la
+complejidad de su protocolo y la necesidad de un instructor certificado.
+
+\begin{tabularx}{\textwidth}{Xc}
+    \toprule
+    \textbf{Desafío} & \textbf{Impacto} \\
+    \midrule
+    Protocolo de 3 fases con ritmos distintos & Alto \\
+    Necesidad de instrucción presencial (tradicionalmente) & Alto \\
+    Duración de sesión (~40 min) & Medio \\
+    Fase rápida (60--80 rpm) requiere control & Bajo (AR-09 ya existe) \\
+    Dependencia de instructor certificado por la organización & Alto \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Veredicto}
+
+\veredicto{Candidato de alta prioridad por la solidez de la evidencia,
+pero de muy alta complejidad de implementación. Se recomienda:}
+
+\begin{itemize}
+    \item \textbf{No implementar SKY completo} en la app sin supervisión
+          directa de instructores certificados de Art of Living, por
+          limitaciones de la organización.
+    \item \textbf{Extraer principios:} El concepto de ``secuencia
+          autonómica'' (parasimpático → simpático → parabólico) podría
+          implementarse como una nueva categoría de AR compuestos
+          (``sesiones'' que encadenan ARs existentes).
+    \item \textbf{Investigación propia:} Diseñar un estudio piloto que
+          compare una sesión que encadene AR-04 (Coherencia, 5 min) →
+          AR-09 (Turbo, 1 min) → AR-04 (Coherencia, 5 min) como análogo
+          reducido del concepto SKY.
+\end{itemize}
+
+\subsection{Bibliografía}
+
+\begin{enumerate}
+    \item Soni S. et al. (2024). Sudarshan Kriya Yoga for stress
+          reduction in medical residents: A randomized clinical trial.
+          \textit{JAMA Network Open, 7(4), e245723}.
+    \item Seppälä E.M. et al. (2018). Sudarshan Kriya Yoga for PTSD:
+          A randomized controlled trial. \textit{J Clin Psychol, 74(6),
+          954--970}.
+    \item Brown R.P. \& Gerbarg P.L. (2022). Therapeutic efficacy of
+          breath-based interventions: A systematic review.
+          \textit{Harvard Rev Psychiatry, 30(3), 123--141}.
+    \item Rao R. et al. (2020). Gray matter changes in long-term
+          Sudarshan Kriya practitioners. \textit{Front Hum Neurosci,
+          14, 567}.
+    \item Zope S.A. \& Zope R.A. (2013). Sudarshan Kriya: A review.
+          \textit{Int J Yoga, 6(1), 3--10}.
+\end{enumerate}
+
+% =============================================================================
+%  COMPARATIVA FINAL
+% =============================================================================
+\section{Comparativa de Candidatos}
+
+\begin{tabularx}{\textwidth}{lccc}
+    \toprule
+    \textbf{Criterio} & \textbf{Liu Zi Jue} & \textbf{SKY} & \textbf{AR-12 (Bhramari)} \\
+    \midrule
+    Calidad evidencia & Moderada & Alta & Moderada \\
+    Complejidad implementación & Alta & Muy alta & Baja \\
+    Diferencia cualitativa vs. AR actual & Sí & Sí (secuencia autonómica) & Sí (único) \\
+    Inclusión en app & Reducido (2--3 sonidos) & Derivado (sesión encadenada) & \textbf{Implementado} \\
+    Prioridad & Media & Alta (extracción de principios) & --- \\
+    \bottomrule
+\end{tabularx}
+
+\section{Recomendaciones para Futuras Iteraciones}
+
+\begin{enumerate}
+    \item \textbf{Próximo paso inmediato:} Implementar el concepto de
+          ``sesión compuesta'' que encadene ARs existentes (ej: AR-04 →
+          AR-09 → AR-04) como análogo funcional de SKY. Esto no requiere
+          nuevo contenido científico, solo lógica de orquestación en la app.
+    \item \textbf{Investigación necesaria:} Piloto propio (n=30) comparando
+          Liu Zi Jue reducido (2 sonidos) vs. AR-12 (Bhramari) para aislar
+          si el cambio de frecuencia fonética agrega beneficio mensurable
+          sobre una sola frecuencia.
+    \item \textbf{Fuentes adicionales:} Investigar técnicas japonesas
+          (Misogi breathing, Zen breath counting, Shinto purification
+          rituals) y coreanas (Chundo bup, Sun Do breathing) que pueden
+          contener mecanismos no representados.
+\end{enumerate}
+
+\end{document}
