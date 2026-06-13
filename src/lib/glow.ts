@@ -11,6 +11,7 @@ export const GLOW_COLORS = {
   "exhalación lenta": "rgba(167, 139, 250, 0.6)",
   "exhalación parcial": "rgba(167, 139, 250, 0.6)",
   "exhalación explosiva": "rgba(251, 146, 60, 0.6)",
+  "exhalación con zumbido": "rgba(217, 70, 239, 0.6)",
   "exhalar derecha": "rgba(167, 139, 250, 0.6)",
   "pausa plena": "rgba(125, 211, 252, 0.4)",
   "pausa vacía": "rgba(100, 116, 139, 0.4)",

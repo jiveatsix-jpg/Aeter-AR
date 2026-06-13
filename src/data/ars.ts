@@ -324,4 +324,32 @@ export const ARS = [
     researchNotes: "Mecanismo plausible. La bradicardia por retención es un reflejo conocido. Sin embargo, no hay estudios específicos que respalden el claim de 'mejora de precisión en tiro', aunque es ampliamente usado en contextos tácticos.",
     citation: "Reflejo de buceo (diving reflex) y bradicardia por retención respiratoria. Fisiología estándar.",
   },
+  {
+    id: "AR-12",
+    name: "Bhramari Pranayama",
+    officialName: "Respiración del Abejorro — Vibro-Acústica Vagal",
+    cyclePattern: "2-0-6-0 (zumbido)",
+    timePerCycle: 8,
+    totalTime: "3-6 min",
+    mechanismShort: "Estimulación vibro-acústica del vago vía zumbido glótico sostenido",
+    mechanism:
+      "El zumbido glótico sostenido durante la exhalación genera vibraciones mecánicas que se transmiten por el cráneo al oído medio, estimulando la rama auricular del nervio vago (nervio de Arnold). Este mecanismo vibro-acústico es UNICO entre las técnicas respiratorias — ninguna otra AR activa el vago por vía auditiva. La exhalación prolongada (6s) suma la activación vagal tradicional por barorreceptores. Estudio con 118 sujetos (Jain et al., 2015) mostró máximo HRV en ciclos de 12-14s (4-5 rpm). Efecto calmante inmediato desde la primera exhalación con zumbido.",
+    risk: RISK_LEVEL.NULO,
+    riskNotes: "Segura. Si el zumbido irrita la garganta, reducir intensidad. No requiere esfuerzo vocal — el zumbido es suave y glótico.",
+    context: "Estrés general, ansiedad, tensión acumulada, inicio o cierre de práctica de meditación.",
+    longDescription:
+      "Técnica milenaria del pranayama yóguico (referenciada en textos clásicos como el Gheranda Samhita), pero con un mecanismo redescubierto por la neurociencia moderna. El zumbido no es un adorno — es el vehículo mecánico de la estimulación vagal. A diferencia de técnicas como el Physiological Sigh o la Coherencia Cardíaca que activan el vago por vía barorreceptora (presión), Bhramari lo hace por vía vibro-acústica (sonido). Esto la convierte en la única AR del catálogo con un mecanismo cualitativamente distinto. La práctica regular mejora la variabilidad cardíaca y la regulación emocional. El patrón 2-6 (inhalar 2s, zumbar 6s) es una adaptación moderna que optimiza el tiempo dentro de la ventana de frecuencia de resonancia.",
+    phases: [
+      { name: "Inhalación", duration: 2, unit: "s", via: "nasal", notes: "Tranquila, sin forzar. Preparar glotis." },
+      { name: "Exhalación con Zumbido", duration: 6, unit: "s", via: "nasal", notes: "Zumbido sostenido 'M' glótico. Vibración en cráneo y pecho." },
+    ],
+    metrics: [
+      { name: "HRV", value: "Aumento significativo", unit: "pico en 12-14s por ciclo" },
+      { name: "Reducción Cortisol", value: "Significativa", unit: "con práctica diaria" },
+      { name: "Tiempo Pico", value: "3", unit: "min" },
+      { name: "Duración Residual", value: "30-60", unit: "min" },
+    ],
+    researchNotes: "Mecanismo sólido: vibro-acústico, respaldado por neuroanatomía (nervio de Arnold, rama auricular del vago). El estudio de Jain et al. (2015) con 118 sujetos es el más citado. El patrón 2-6 es adaptación de la app para alinearse con frecuencia de resonancia (~7.5 rpm). El mecanismo vibro-acústico es lo que realmente distingue a esta técnica — no es 'otra respiración lenta', ES una categoría diferente de estímulo vagal.",
+    citation: "Jain A. et al. (2015). Effect of Bhramari Pranayama on HRV. Indian J Physiol Pharmacol, 59(1), 51-55. Kuppusamy M. et al. (2018). Bhramari Pranayama — A systematic review. J Ayurveda Integr Med, 9(3), 213-216.",
+  },
 ] as const satisfies readonly ArData[]

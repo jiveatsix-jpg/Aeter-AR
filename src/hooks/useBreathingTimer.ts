@@ -14,6 +14,7 @@ export const PHASE_COLORS = {
   "exhalación lenta": "border-violet-400 text-violet-400",
   "exhalación parcial": "border-violet-400 text-violet-400",
   "exhalación explosiva": "border-orange-400 text-orange-400",
+  "exhalación con zumbido": "border-fuchsia-400 text-fuchsia-400",
   "exhalar derecha": "border-violet-400 text-violet-400",
   "pausa plena": "border-sky-300 text-sky-300",
   "pausa vacía": "border-slate-500 text-slate-500",

@@ -166,4 +166,14 @@ export const GLOSSARY: GlossaryEntry[] = [
     aliases: ["nasal", "respiración nasal", "vía nasal"],
     definition: "Respiración a través de la nariz. Filtra, calienta y humedece el aire, produce óxido nítrico (que mejora la oxigenación) y activa el sistema parasimpático más eficazmente que la respiración bucal.",
   },
+  {
+    term: "bhramari pranayama",
+    aliases: ["bhramari", "respiración del abejorro", "humming bee breath"],
+    definition: "Técnica de pranayama yóguico que consiste en exhalar con un zumbido glótico sostenido (como el zumbido de una abeja). La vibración mecánica del sonido estimula el nervio vago a través del oído medio, produciendo una activación parasimpática única por vía vibro-acústica.",
+  },
+  {
+    term: "vibro-acústico",
+    aliases: ["vibroacústico", "vibro-acústica", "estimulación vibro-acústica"],
+    definition: "Estimulación mecánica del sistema nervioso mediante vibraciones sonoras. En el contexto respiratorio, el zumbido glótico del Bhramari Pranayama genera vibraciones que se transmiten por el cráneo al oído medio, activando la rama auricular del nervio vago y produciendo un efecto calmante inmediato.",
+  },
 ]
