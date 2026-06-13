@@ -106,6 +106,8 @@ function GuideInner({ arId, arName, phases, soundEnabled, navigate }: GuideInner
         cycle={state.cycle}
         totalCycles={state.totalCycles}
         running={state.running}
+        elapsed={state.elapsed}
+        phaseDuration={state.phase.duration}
       />
 
       {/* Controls */}

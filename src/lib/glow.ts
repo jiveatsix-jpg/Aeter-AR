@@ -1,3 +1,34 @@
+/** Solid fill colors for PhaseProgressBar (OKLCH for smooth Tailwind v4 compatibility) */
+export const PHASE_FILL_COLORS: Record<string, string> = {
+  inhalation: "oklch(0.789 0.154 197.4)",
+  "inhalación": "oklch(0.789 0.154 197.4)",
+  "inhalación máxima": "oklch(0.789 0.154 197.4)",
+  "inhalación relleno": "oklch(0.777 0.152 181.2)",
+  "inhalar izquierda": "oklch(0.789 0.154 197.4)",
+  "retención lleno": "oklch(0.828 0.169 84.4)",
+  "retención vacío": "oklch(0.678 0.047 258.4)",
+  exhalación: "oklch(0.719 0.197 296.9)",
+  "exhalación lenta": "oklch(0.719 0.197 296.9)",
+  "exhalación parcial": "oklch(0.719 0.197 296.9)",
+  "exhalación explosiva": "oklch(0.746 0.16 48.7)",
+  "exhalación con zumbido": "oklch(0.726 0.29 326.8)",
+  "exhalar derecha": "oklch(0.719 0.197 296.9)",
+  "pausa plena": "oklch(0.839 0.086 229.6)",
+  "pausa vacía": "oklch(0.555 0.055 257.4)",
+  "pausa máxima": "oklch(0.555 0.055 257.4)",
+  "pausa prn": "oklch(0.718 0.202 8.8)",
+  "respiraciones rápidas": "oklch(0.746 0.16 48.7)",
+  "vaciado total": "oklch(0.555 0.055 257.4)",
+  "recuperación": "oklch(0.787 0.196 163.5)",
+  repetición: "oklch(0.555 0.055 257.4)",
+  default: "oklch(0.707 0.165 261.3)",
+}
+
+export function getPhaseFillColor(name: string): string {
+  const key = name.toLowerCase().trim()
+  return PHASE_FILL_COLORS[key] ?? PHASE_FILL_COLORS.default
+}
+
 /** Glow colors for each phase type */
 export const GLOW_COLORS = {
   inhalation: "rgba(34, 211, 238, 0.6)",
