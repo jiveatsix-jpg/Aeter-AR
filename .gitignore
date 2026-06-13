@@ -25,3 +25,11 @@ dist-ssr
 
 # Tauri
 src-tauri/target/
+
+# Android APK (build artifacts)
+*.apk
+
+# Android Gradle build outputs
+src-tauri/gen/android/**/build/
+src-tauri/gen/android/local.properties
+src-tauri/gen/android/.gradle/
