@@ -48,7 +48,7 @@ export function CatalogPage() {
                 <span className="text-xs text-slate-500">{ar.id}</span>
               </div>
               <p className="mt-0.5 text-sm text-slate-400 line-clamp-2">
-                <SmartText text={ar.mechanismShort} />
+                <SmartText text={ar.context} />
               </p>
               <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-500">
                 <span>{ar.cyclePattern}</span>

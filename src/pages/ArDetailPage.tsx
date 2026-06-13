@@ -44,10 +44,13 @@ export function ArDetailPage() {
         </p>
       </div>
 
-      {/* Infographic placeholder */}
-      <div className="flex aspect-[4/3] items-center justify-center rounded-xl border border-dashed border-slate-700 bg-slate-900/50">
-        <p className="text-sm text-slate-600">Infografía: {ar.id}.png</p>
-      </div>
+      {/* Casos de Uso */}
+      <section className="space-y-2">
+        <h2 className="text-lg font-semibold">Casos de Uso</h2>
+        <p className="text-sm leading-relaxed text-slate-300">
+          <SmartText text={ar.context} />
+        </p>
+      </section>
 
       {/* Mechanism */}
       <section className="space-y-2">
