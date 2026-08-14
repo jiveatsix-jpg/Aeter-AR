@@ -28,7 +28,7 @@ export const ARS = [
       { name: "Tiempo Pico", value: "4", unit: "min" },
       { name: "Duración Residual", value: "60-90", unit: "min" },
     ],
-    researchNotes: "Meta-análisis respalda aumento de HRV. Reducción de cortisol documentada en estudio Harvard 2017 (Ma et al.). Números exactos del PDF original no replicados, pero dirección del efecto confirmada.",
+    researchNotes: "Meta-análisis respalda un aumento significativo de HRV vagal-mediada. Reducción de cortisol documentada en estudio de Harvard (Ma et al., 2017). La magnitud exacta varía entre individuos, pero la dirección del efecto está confirmada por múltiples estudios.",
     citation: "Laborde S. et al. (2022). Effects of voluntary slow breathing on HRV. Neurosci Biobehav Rev, 138, 104711.",
   },
   {
@@ -116,7 +116,7 @@ export const ARS = [
       { name: "Duración Residual", value: "4-6", unit: "h" },
       { name: "Coherencia", value: "Óptima", unit: "en 0.04-0.10 Hz" },
     ],
-    researchNotes: "Mecanismo sólido. El PDF original dice '+310% HRV' — ese número no es replicable/universal. Se cambió a 'aumento significativo'. La duración residual de 4-6h no está establecida científicamente pero es reportada por practicantes.",
+    researchNotes: "Mecanismo sólido: la resonancia a 0.1 Hz produce aumentos importantes de HRV, aunque la magnitud varía según el individuo y no existe una cifra fija universal. La duración residual de 4-6h no está establecida rigurosamente en la literatura, pero es consistente con lo reportado por practicantes habituales.",
     citation: "Nature Scientific Reports (2025). HRV biofeedback global study. Sévoz-Couche & Laborde (2022). Neurosci Biobehav Rev.",
   },
   {
@@ -146,7 +146,7 @@ export const ARS = [
       { name: "Tiempo Pico", value: "12", unit: "min" },
       { name: "Duración Residual", value: "8", unit: "h" },
     ],
-    researchNotes: "El claim de '<12 min para dormir' NO está respaldado. Estudio Duke 2017 mostró solo 55s de mejora. Se reformuló como 'ayuda a conciliar el sueño' sin prometer tiempos. El mecanismo de acumulación de CO₂ es real.",
+    researchNotes: "Un estudio de Duke University (2017) mostró una mejora modesta en la latencia de sueño (~55 segundos). El mecanismo de acumulación de CO₂ y su efecto sedante es fisiológicamente real, aunque no debe esperarse una inducción del sueño garantizada en pocos minutos.",
     citation: "Jerath R. et al. (2019). Self-Regulation of Breathing as Adjunctive Treatment of Insomnia. Front Psychiatry. Duke University 2017.",
   },
   {
@@ -163,7 +163,7 @@ export const ARS = [
     riskNotes: "Segura. Si una fosa está congestionada, respirar por la boca en esa fase.",
     context: "Antes de meditar, ansiedad generalizada, transiciones mentales.",
     longDescription:
-      "Técnica clásica del pranayama yóguico. La alternancia de fosas nasales tiene un efecto estabilizador documentado sobre el sistema nervioso autónomo. Se elimina el claim de '+22% decisión' del PDF original por falta de respaldo científico. Se mantienen los beneficios calmantes generales.",
+      "Técnica clásica del pranayama yóguico. La alternancia de fosas nasales tiene un efecto estabilizador documentado sobre el sistema nervioso autónomo, con beneficios calmantes generales bien reportados en la literatura.",
     phases: [
       { name: "Inhalar Izquierda", duration: 4, unit: "s", via: "nasal", notes: "Cerrar fosa derecha con el pulgar." },
       { name: "Retención Lleno", duration: 4, unit: "s", via: "—", notes: "Sincronización." },
@@ -223,7 +223,7 @@ export const ARS = [
     riskNotes: "La pausa máxima debe sentirse como 'hambre de aire', no como asfixia. Calmar inmediatamente después.",
     context: "Mejora de eficiencia respiratoria general, preparación para ejercicio aeróbico.",
     longDescription:
-      "Técnica que entrena la tolerancia al CO₂ y optimiza el uso de oxígeno celular mediante el Efecto Bohr. Se eliminó el claim de '+25% eficiencia' por falta de respaldo. El beneficio real está en entrenar la tolerancia al CO₂ y mejorar la eficiencia del intercambio gaseoso a largo plazo.",
+      "Técnica que entrena la tolerancia al CO₂ y optimiza el uso de oxígeno celular mediante el Efecto Bohr. El beneficio real está en entrenar la tolerancia al CO₂ y mejorar la eficiencia del intercambio gaseoso a largo plazo, más que en una cifra específica de mejora.",
     phases: [
       { name: "Inhalación", duration: 2, unit: "s", via: "nasal", notes: "Inhalación superficial, bajo volumen." },
       { name: "Exhalación", duration: 2, unit: "s", via: "nasal", notes: "Exhalación pasiva y relajada." },
@@ -236,7 +236,7 @@ export const ARS = [
       { name: "Tiempo Pico", value: "10", unit: "min" },
       { name: "Duración Residual", value: "3", unit: "h" },
     ],
-    researchNotes: "Efecto Bohr confirmado a nivel fisiológico pero el +25% no tiene respaldo. Se reformuló para ser preciso: 'optimiza la liberación de O₂ mediante el Efecto Bohr' sin número específico.",
+    researchNotes: "El Efecto Bohr está confirmado a nivel fisiológico como mecanismo de liberación de O₂ a los tejidos, aunque no existe un porcentaje de mejora validado en estudios específicos. La técnica optimiza esta liberación mediante el mecanismo natural, sin una cifra fija universal.",
     citation: "Christian Bohr (1904). Wikipedia: Bohr effect. Mecanismo fisiológico establecido.",
   },
   {
@@ -281,7 +281,7 @@ export const ARS = [
     riskNotes: "Segura. Ajustar la ratio según la intensidad del esfuerzo.",
     context: "Running, ciclismo, remo, o cualquier actividad de resistencia con patrón repetitivo.",
     longDescription:
-      "Técnica para deportes de resistencia. La sincronización paso-respiración evita el 'hipo' lateral (dolor de costado) y mejora la eficiencia. Se eliminó el claim directo sobre lactato por falta de evidencia específica. El beneficio principal es mantener un ritmo respiratorio constante durante el esfuerzo prolongado.",
+      "Técnica para deportes de resistencia. La sincronización paso-respiración evita el 'hipo' lateral (dolor de costado) y mejora la eficiencia. El efecto sobre el lactato es teórico y no está probado en estudios controlados; el beneficio principal es mantener un ritmo respiratorio constante durante el esfuerzo prolongado.",
     phases: [
       { name: "Inhalación", duration: 2, unit: "s", via: "nasal", notes: "Coordinar con 2 pasos. Ajustable por intensidad." },
       { name: "Exhalación", duration: 2.5, unit: "s", via: "bucal", notes: "Flujo constante. Si el esfuerzo aumenta, ratio 1:1." },

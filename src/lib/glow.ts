@@ -26,7 +26,7 @@ export const PHASE_FILL_COLORS: Record<string, string> = {
 
 export function getPhaseFillColor(name: string): string {
   const key = name.toLowerCase().trim()
-  return PHASE_FILL_COLORS[key] ?? PHASE_FILL_COLORS.default
+  return PHASE_FILL_COLORS[key] ?? PHASE_FILL_COLORS["default"]!
 }
 
 /** Glow colors for each phase type */

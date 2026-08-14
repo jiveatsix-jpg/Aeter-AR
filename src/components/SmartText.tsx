@@ -30,12 +30,9 @@ interface SmartTextProps {
 export function SmartText({ text, className }: SmartTextProps) {
   const parts: Array<{ type: "text"; value: string } | { type: "link"; value: string; slug: string }> = []
   let lastIndex = 0
-  let match: RegExpExecArray | null
 
-  // Reset lastIndex for each render
-  GLOSSARY_RE.lastIndex = 0
-
-  while ((match = GLOSSARY_RE.exec(text)) !== null) {
+  // matchAll clones GLOSSARY_RE internally, so this never mutates shared state
+  for (const match of text.matchAll(GLOSSARY_RE)) {
     const matched = match[0]
     const idx = match.index
     const slug = termToSlug.get(matched.toLowerCase())

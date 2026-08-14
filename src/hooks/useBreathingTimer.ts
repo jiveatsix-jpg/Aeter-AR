@@ -87,6 +87,7 @@ export function useBreathingTimer(phases: ArPhase[], totalCycles_: number, sound
   const pausedRef = useRef(false)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const tickRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const advanceRef = useRef<() => void>(() => {})
 
   const clearTimers = useCallback(() => {
     if (timeoutRef.current) {
@@ -135,8 +136,12 @@ export function useBreathingTimer(phases: ArPhase[], totalCycles_: number, sound
       elapsed: 0,
     }))
 
-    timeoutRef.current = setTimeout(advance, p.duration * 1000)
+    timeoutRef.current = setTimeout(() => advanceRef.current(), p.duration * 1000)
   }, [timedPhases, totalCycles, soundEnabled, clearTimers])
+
+  useEffect(() => {
+    advanceRef.current = advance
+  }, [advance])
 
   const start = useCallback(() => {
     if (timedPhases.length === 0) return
@@ -163,8 +168,8 @@ export function useBreathingTimer(phases: ArPhase[], totalCycles_: number, sound
       setState((prev) => ({ ...prev, elapsed: prev.elapsed + 1 }))
     }, 1000)
 
-    timeoutRef.current = setTimeout(advance, first.duration * 1000)
-  }, [timedPhases, totalCycles, advance, clearTimers])
+    timeoutRef.current = setTimeout(() => advanceRef.current(), first.duration * 1000)
+  }, [timedPhases, totalCycles, clearTimers])
 
   const pause = useCallback(() => {
     runningRef.current = false
@@ -187,11 +192,11 @@ export function useBreathingTimer(phases: ArPhase[], totalCycles_: number, sound
 
     const remaining = state.phase.duration - state.elapsed
     if (remaining > 0) {
-      timeoutRef.current = setTimeout(advance, remaining * 1000)
+      timeoutRef.current = setTimeout(() => advanceRef.current(), remaining * 1000)
     } else {
-      advance()
+      advanceRef.current()
     }
-  }, [state.completed, state.phase.duration, state.elapsed, advance, clearTimers])
+  }, [state.completed, state.phase.duration, state.elapsed])
 
   const stop = useCallback(() => {
     runningRef.current = false
