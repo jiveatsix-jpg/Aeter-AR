@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from "react-router-dom"
 import { cn } from "../lib/cn"
+import { TutorialOverlay } from "./TutorialOverlay"
 
 const NAV_ITEMS = [
   { to: "/", label: "ARs", icon: "◈" },
@@ -11,6 +12,8 @@ const NAV_ITEMS = [
 export function Layout() {
   return (
     <div className="mx-auto flex min-h-dvh max-w-lg flex-col bg-slate-950 text-white md:max-w-2xl lg:max-w-3xl">
+      <TutorialOverlay />
+
       {/* Main content */}
       <main className="flex-1 px-4 pb-24 pt-4 md:px-8 md:pb-28 lg:px-12">
         <Outlet />
